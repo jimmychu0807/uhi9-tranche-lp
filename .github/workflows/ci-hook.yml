@@ -1,15 +1,19 @@
-name: Test Suite
+name: Hook Test Suite
 
 on:
   workflow_dispatch:
-  # push:
-  # pull_request:
+  push:
+    paths:
+      - "packages/hook/**"
+  pull_request:
+    paths:
+      - "packages/hook/**"
 
 env:
   FOUNDRY_PROFILE: ci
 
 jobs:
-  test:
+  hook-test:
     name: Foundry Project
     runs-on: ubuntu-latest
     steps:
@@ -25,12 +29,12 @@ jobs:
       - name: Build
         id: build
         run: |
-          cd packages/contracts
+          cd packages/hook
           forge --version
           forge build --sizes
 
       - name: Test
         id: test
         run: |
-          cd packages/contracts
+          cd packages/hook
           forge test -vvv
