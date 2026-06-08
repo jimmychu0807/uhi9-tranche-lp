@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "biome check",
-    "format": "biome format --write"
+    "dev": "bunx -b next dev",
+    "build": "bunx -b next build",
+    "start": "bunx -b next start",
+    "lint": "bunx -b biome check",
+    "format": "bunx -b biome format --write"
   },
   "dependencies": {
     "next": "16.2.7",
