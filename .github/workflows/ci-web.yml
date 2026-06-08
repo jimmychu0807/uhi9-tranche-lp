@@ -1,0 +1,33 @@
+name: Web Test Suite
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "packages/web/**"
+  pull_request:
+    paths:
+      - "packages/web/**"
+
+jobs:
+  web-test:
+    name: Web Package
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/web
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+        working-directory: .
+
+      - name: Build
+        run: bun run build
+
+      - name: Lint
+        run: bun run lint

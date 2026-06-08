@@ -1,0 +1,40 @@
+name: Hook Test Suite
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "packages/hook/**"
+  pull_request:
+    paths:
+      - "packages/hook/**"
+
+env:
+  FOUNDRY_PROFILE: ci
+
+jobs:
+  hook-test:
+    name: Foundry Project
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: stable
+
+      - name: Build
+        id: build
+        run: |
+          cd packages/hook
+          forge --version
+          forge build --sizes
+
+      - name: Test
+        id: test
+        run: |
+          cd packages/hook
+          forge test -vvv
