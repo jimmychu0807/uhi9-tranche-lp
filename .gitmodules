@@ -1,0 +1,3 @@
+[submodule "packages/hook"]
+	path = packages/hook
+	url = https://github.com/jimmychu0807/uhi9-hook
