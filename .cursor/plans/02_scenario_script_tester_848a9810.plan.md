@@ -57,7 +57,7 @@ This reuses the proven setup: `deployArtifactsAndLabel()`, flag-mined `TrancheLP
     { "op": "pass", "seconds": 86400 },
     { "op": "lpWithdraw", "user": "lpUser1", "pct": 60 },
     { "op": "userAssert", "user": "lpUser1", "amount0": { "op": "gte", "value": "10.01" }, "amount1": { "op": "gt", "value": "20000" } },
-    { "op": "hookAssertion", "user": "lpUser1", "srtPct": { "op": "approx", "value": "20" }, "jrtPct": { "op": "approx", "value": "3" } },
+    { "op": "hookAssert", "user": "lpUser1", "srtPct": { "op": "approx", "value": "20" }, "jrtPct": { "op": "approx", "value": "3" } },
     { "op": "poolAssert", "amount0": { "op": "approx", "value": "1" }, "amount1": { "op": "approx", "value": "2000" } }
   ]
 }
@@ -135,7 +135,7 @@ Add minimal [`packages/hook/package.json`](packages/hook/package.json) with scri
 **`userAssert`**
 - `assertToken(user, currency0, amount0Spec)` and/or `currency1`.
 
-**`hookAssertion`** (per your choice: % of **initial** tranche amounts)
+**`hookAssert`** (per your choice: % of **initial** tranche amounts)
 - `srtPctActual = pos.srtBalance * 100 / initialSenior` (handle zero initial)
 - `jrtPctActual = pos.jrtBalance * 100 / initialJunior`
 - Compare with `approx` tolerance.
@@ -212,6 +212,6 @@ Withdrawal burn logic already in hook (`burnRatio`, proportional SRT/JRT burn) â
 ## Out of scope (v1)
 
 - Multiple positions per user across different tick ranges
-- `hookAssertion` bases other than % of initial deposit
+- `hookAssert` bases other than % of initial deposit
 - Fork/mainnet scenarios
 - Auto-running TS parser inside `forge test` via FFI (manual/CI pre-step is sufficient for v1)

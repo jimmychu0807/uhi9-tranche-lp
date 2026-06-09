@@ -47,7 +47,7 @@ userAssert: lpUser2, , ~20000
 ## 6. Pool Assertion
 
 ```
-hookAssertion: lpUser1, ~20%, ~3%
+hookAssert: lpUser1, ~20%, ~3%
 poolAssert: ~1, ~2000
 ```
 - The first line indicates the hook should have about 20% srt tokens and about 3% of jrt tokens for **lpUser1**.
