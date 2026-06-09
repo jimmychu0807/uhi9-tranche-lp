@@ -7,16 +7,16 @@ todos:
     status: completed
   - id: solidity-runner
     content: Implement ScenarioAssertions.sol + ScenarioRunner.sol (user registry, op dispatch, withdraw reporting)
-    status: pending
+    status: completed
   - id: scenario-test
     content: Add TrancheScenario.t.sol with ETH/USDC currency override and example.scenario fixture
-    status: pending
+    status: completed
   - id: foundry-config
     content: Update foundry.toml fs_permissions and add packages/hook/package.json script
-    status: pending
+    status: completed
   - id: integration
     content: Parse example scenario, run forge test, tune tolerances until example.scenario passes
-    status: pending
+    status: completed
 isProject: false
 ---
 
