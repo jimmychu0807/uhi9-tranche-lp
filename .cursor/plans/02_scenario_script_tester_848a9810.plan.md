@@ -4,7 +4,7 @@ overview: Build a Bun TypeScript parser for the test_script_req.md DSL that emit
 todos:
   - id: ts-parser
     content: Add scenario-types.ts + parse-scenario.ts CLI with validation and JSON emission
-    status: pending
+    status: completed
   - id: solidity-runner
     content: Implement ScenarioAssertions.sol + ScenarioRunner.sol (user registry, op dispatch, withdraw reporting)
     status: pending
