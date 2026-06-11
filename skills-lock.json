@@ -12,6 +12,12 @@
       "skillPath": "packages/plugins/uniswap-cca/skills/configurator/SKILL.md",
       "computedHash": "251add1c645e4a3063a9f359b25c8da8fa31dc46be9a122dab253644f778cf45"
     },
+    "create-readme": {
+      "source": "github/awesome-copilot",
+      "sourceType": "github",
+      "skillPath": "skills/create-readme/SKILL.md",
+      "computedHash": "d0ece1b2164ce1376e4ab6e98d6ac079df3a2a94f5f02224362b6a1ce2516ae9"
+    },
     "deployer": {
       "source": "uniswap/uniswap-ai",
       "sourceType": "github",
